@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面设计</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            display: flex;
+            min-height: 100vh;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .phone-container {
+            flex: 0 0 375px;
+            height: 812px;
+            background: #fff;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border-radius: 30px;
+            color: white;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .login-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .login-button {
+            background: white;
+            color: #4f46e5;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .design-notes {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .design-notes h2 {
+            color: #1f2937;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .design-note {
+            margin-bottom: 30px;
+        }
+
+        .design-note h3 {
+            color: #4f46e5;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .design-note p {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .design-notes {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="phone-container">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>欢迎登录</h1>
+                    <p>请输入您的账号密码</p>
+                </div>
+                <form class="login-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="请输入用户名" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="请输入密码" required>
+                    </div>
+                    <button type="submit" class="login-button">登 录</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="design-notes">
+            <h2>设计说明</h2>
+            
+            <div class="design-note">
+                <h3>1. 视觉设计</h3>
+                <p>采用渐变背景色（#6366f1 到 #4f46e5）创造现代感和深度，白色文字提供最佳可读性。界面元素采用圆角设计，营造友好柔和的视觉效果。整体配色方案简洁大方，突出重点。</p>
+            </div>
+
+            <div class="design-note">
+                <h3>2. 布局设计</h3>
+                <p>采用垂直居中布局，重要元素间距恰当，视觉层次清晰。表单元素采用适中的内边距和字号，确保在移动端操作舒适。登录按钮醒目且易于点击。</p>
+            </div>
+
+            <div class="design-note">
+                <h3>3. 交互设计</h3>
+                <p>输入框聚焦时有明显的状态变化，提供即时反馈。登录按钮hover效果采用轻微上浮和阴影变化，提升交互体验。表单验证即时反馈，避免用户提交无效数据。</p>
+            </div>
+
+            <div class="design-note">
+                <h3>4. 响应式设计</h3>
+                <p>页面完全适配移动端，考虑不同尺寸设备的显示效果。字体使用系统默认字体栈，确保在各平台显示清晰。布局和间距经过精心调整，确保在各种设备上都能获得最佳体验。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('登录功能演示');
+        });
+    </script>
+</body>
+</html> 
